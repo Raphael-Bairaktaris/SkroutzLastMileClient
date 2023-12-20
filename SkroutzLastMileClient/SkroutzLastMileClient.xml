@@ -6,7 +6,7 @@
     <members>
         <member name="T:SkroutzLastMileClient.CreateShippingOrderRequestModel">
             <summary>
-            A shipping order response
+            Request model used for creating a shipping order
             </summary>
         </member>
         <member name="P:SkroutzLastMileClient.CreateShippingOrderRequestModel.CustomerReference">
@@ -64,6 +64,107 @@
             <summary>
             Default constructor
             </summary>
+        </member>
+        <member name="T:SkroutzLastMileClient.InternalCreateShippingOrderRequestModel">
+            <summary>
+            Request model used for creating a shipping order
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.InternalCreateShippingOrderRequestModel.CustomerReference">
+            <summary>
+            The customer reference (Your internal unique identifier of the order)
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.InternalCreateShippingOrderRequestModel.IsReturn">
+            <summary>
+            Indicates if the shipment is a return (Always use false)
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.InternalCreateShippingOrderRequestModel.NumberOfParcels">
+            <summary>
+            The number of parcels (Always use 1. Multiple-package orders are not supported for locker deliveries.)
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.InternalCreateShippingOrderRequestModel.PickupLocationCode">
+            <summary>
+            The unique code for the pickup location. It corresponds to a pre-agreed location for picking up parcels. 
+            A merchant can have multiple pickup location codes where each one corresponds to a different pickup location.
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.InternalCreateShippingOrderRequestModel.PickupNotes">
+            <summary>
+            Any additional notes for the pickup.
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.InternalCreateShippingOrderRequestModel.RecipientName">
+            <summary>
+            The full name of the recipient
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.InternalCreateShippingOrderRequestModel.RecipientPhone">
+            <summary>
+            The mobile phone number of the recipient
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.InternalCreateShippingOrderRequestModel.SenderPhone">
+            <summary>
+            The phone number of the merchant
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.InternalCreateShippingOrderRequestModel.SkroutzPointId">
+            <summary>
+            The Id of the chosen Skroutz Point locker from the map
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.InternalCreateShippingOrderRequestModel.Weight">
+            <summary>
+            The weight of the parcel
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.InternalCreateShippingOrderRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.InternalCreateShippingOrderRequestModel.FromCreateShippingOrderRequestModel(SkroutzLastMileClient.CreateShippingOrderRequestModel)">
+            <summary>
+            Creates and returns a <see cref="T:SkroutzLastMileClient.InternalCreateShippingOrderRequestModel"/> from the specified <paramref name="model"/>
+            </summary>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="T:SkroutzLastMileClient.InternalUpdateShippingOrderRequestModel">
+            <summary>
+            Used to reschedule the pickup date and time window for an order. 
+            Use the same instruction for these fields as in the order creation endpoint.
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.InternalUpdateShippingOrderRequestModel.PickupDate">
+            <summary>
+            The date of the order pickup
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.InternalUpdateShippingOrderRequestModel.PickupTimeFrom">
+            <summary>
+            The start time of the pickup window
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.InternalUpdateShippingOrderRequestModel.PickupTimeTo">
+            <summary>
+            The end time of the pickup window
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.InternalUpdateShippingOrderRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.InternalUpdateShippingOrderRequestModel.FromUpdateShippingOrderRequestModel(SkroutzLastMileClient.UpdateShippingOrderRequestModel)">
+            <summary>
+            Creates and returns a <see cref="T:SkroutzLastMileClient.InternalUpdateShippingOrderRequestModel"/> from the specified <paramref name="model"/>
+            </summary>
+            <param name="model">The model</param>
+            <returns></returns>
         </member>
         <member name="T:SkroutzLastMileClient.UpdateShippingOrderRequestModel">
             <summary>
@@ -203,14 +304,54 @@
             Returns tracking information on the parcel delivery and pickup.
             </summary>
         </member>
-        <member name="F:SkroutzLastMileClient.ShipmentTrackResponseModel.mTrackingId">
+        <member name="F:SkroutzLastMileClient.ShipmentTrackResponseModel.mCourierNotes">
             <summary>
-            The member of the <see cref="P:SkroutzLastMileClient.ShipmentTrackResponseModel.TrackingId"/>
+            The member of the <see cref="P:SkroutzLastMileClient.ShipmentTrackResponseModel.CourierNotes"/>
             </summary>
         </member>
-        <member name="P:SkroutzLastMileClient.ShipmentTrackResponseModel.TrackingId">
+        <member name="F:SkroutzLastMileClient.ShipmentTrackResponseModel.mShippingOrderId">
             <summary>
-            The tracking ID of the shipment
+            The member of the <see cref="P:SkroutzLastMileClient.ShipmentTrackResponseModel.ShippingOrderId"/>
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.ShipmentTrackResponseModel.IsSuccessful">
+            <summary>
+            Indicates if the tracking information is successful
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.ShipmentTrackResponseModel.StatusDescription">
+            <summary>
+            The status description
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.ShipmentTrackResponseModel.CourierNotes">
+            <summary>
+            The courier notes
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.ShipmentTrackResponseModel.PickedUpAt">
+            <summary>
+            The time of pickup
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.ShipmentTrackResponseModel.DeliveredAt">
+            <summary>
+            The time delivered at
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.ShipmentTrackResponseModel.UpdatedAt">
+            <summary>
+            The time updated at
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.ShipmentTrackResponseModel.ExpectedDayOfDelivery">
+            <summary>
+            The expected day of delivery
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.ShipmentTrackResponseModel.ShippingOrderId">
+            <summary>
+            The shipping order id
             </summary>
         </member>
         <member name="M:SkroutzLastMileClient.ShipmentTrackResponseModel.#ctor">
@@ -442,6 +583,21 @@
         <member name="F:SkroutzLastMileClient.ErrorType.Hidden">
             <summary>
             An error that should get hidden
+            </summary>
+        </member>
+        <member name="T:SkroutzLastMileClient.PaperSize">
+            <summary>
+            Provides enumeration over the paper sizes
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.PaperSize.A4">
+            <summary>
+            A4
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.PaperSize.Thermal">
+            <summary>
+            Thermal
             </summary>
         </member>
         <member name="T:SkroutzLastMileClient.StatusDescriptionType">
@@ -1233,6 +1389,27 @@
         <member name="M:SkroutzLastMileClient.DateOnlyToStringJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.DateOnly,Newtonsoft.Json.JsonSerializer)">
             <inheritdoc/> 
         </member>
+        <member name="T:SkroutzLastMileClient.DateTimeToStringJsonConverter">
+            <summary>
+            The <see cref="T:Newtonsoft.Json.JsonConverter"/> that converts a <see cref="T:System.DateTime"/> to <see cref="T:System.String"/>
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.DateTimeToStringJsonConverter.DateFormat">
+            <summary>
+            The format that is used for serializing and deserializing <see cref="T:System.DateTime"/>s
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.DateTimeToStringJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.DateTimeToStringJsonConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.DateTime,System.Boolean,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkroutzLastMileClient.DateTimeToStringJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.DateTime,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/> 
+        </member>
         <member name="T:SkroutzLastMileClient.DayfOfWeekToStringJsonConverter">
             <summary>
             The <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that converts a <see cref="T:System.DayOfWeek"/> to <see cref="T:System.String"/>s
@@ -1332,6 +1509,24 @@
             </summary>
             <param name="orderId">The order id</param>
             <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.SkroutzLastMileClient.GetShippingOrderVoucherAsPDFAsync(System.String,SkroutzLastMileClient.PaperSize)">
+            <summary>
+            Gets the voucher related to the specified <paramref name="trackingId"/> as a byte array
+            that represents a PDF file
+            </summary>
+            <param name="trackingId">The tracking id</param>
+            <param name="paperSize">The paper size</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.SkroutzLastMileClient.GetShippingOrderVoucherAsBase64StringAsync(System.String,SkroutzLastMileClient.PaperSize)">
+            <summary>
+            Gets the voucher related to the specified <paramref name="trackingId"/> as a Base64 string
+            that represents a PDF file
+            </summary>
+            <param name="trackingId">The tracking id</param>
+            <param name="paperSize">The paper size</param>
             <returns></returns>
         </member>
         <member name="M:SkroutzLastMileClient.SkroutzLastMileClient.GetAllSkroutzPointsAsync">
@@ -1622,6 +1817,25 @@
             Constants related to Skroutz last mile client
             </summary>
         </member>
+        <member name="F:SkroutzLastMileClient.SkroutzLastMileClientConstants.DirectDownloadQueryArgumentName">
+            <summary>
+            The query argument that is used when retrieving a voucher PDF and is used for determining the encoding
+            of the returned data.
+            </summary>
+            <remarks>
+            <para>
+            If set <see cref="!:true"/> then the voucher is returned as a stream representing the PDF file.
+            </para>
+            <para>
+            If set <see cref="!:false"/> then the voucher PDF is returned as a Base64 encoded string.
+            </para>
+            </remarks>
+        </member>
+        <member name="F:SkroutzLastMileClient.SkroutzLastMileClientConstants.PaperSizeQueryArgumentName">
+            <summary>
+            The query argument that is used for determining the size of the voucher that is generated
+            </summary>
+        </member>
         <member name="P:SkroutzLastMileClient.SkroutzLastMileClientConstants.DayOfWeekToStringMapper">
             <summary>
             Maps the <see cref="T:System.DayOfWeek"/> to their related <see cref="T:System.String"/>s
@@ -1630,6 +1844,11 @@
         <member name="P:SkroutzLastMileClient.SkroutzLastMileClientConstants.StatusDescriptionTypeToStringMapper">
             <summary>
             Maps the <see cref="T:SkroutzLastMileClient.StatusDescriptionType"/>s to their related <see cref="T:System.String"/>s
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.SkroutzLastMileClientConstants.PaperSizeToStringMapper">
+            <summary>
+            Maps the <see cref="T:SkroutzLastMileClient.PaperSize"/>s to their related <see cref="T:System.String"/>s
             </summary>
         </member>
         <member name="T:SkroutzLastMileClient.SkroutzLastMileRoutes">
@@ -1670,6 +1889,14 @@
             </summary>
             <param name="baseRoute">The base route</param>
             <param name="orderId">The order id</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.SkroutzLastMileRoutes.GetShippingOrderVoucherRoute(System.String,System.String)">
+            <summary>
+            The shipping order voucher route
+            </summary>
+            <param name="baseRoute">The base route</param>
+            <param name="trackingId">The tracking id</param>
             <returns></returns>
         </member>
         <member name="M:SkroutzLastMileClient.SkroutzLastMileRoutes.GetAllSkroutzPointsRoute(System.String)">

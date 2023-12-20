@@ -1,7 +1,5 @@
 ﻿// Ignore Spelling: Skroutz
 
-using Newtonsoft.Json;
-
 namespace SkroutzLastMileClient
 {
     /// <summary>
@@ -15,18 +13,17 @@ namespace SkroutzLastMileClient
         /// <summary>
         /// The date of the order pickup
         /// </summary>
-        [JsonConverter(typeof(DateOnlyToStringJsonConverter))]
         public DateOnly? PickupDate { get; set; }
 
         /// <summary>
         /// The start time of the pickup window
         /// </summary>
-        public DateTimeOffset? PickupTimeFrom { get; set; }
+        public TimeOnly? PickupTimeFrom { get; set; }
 
         /// <summary>
         /// The end time of the pickup window
         /// </summary>
-        public DateTimeOffset? PickupTimeTo { get; set; }
+        public TimeOnly? PickupTimeTo { get; set; }
 
         #endregion
 

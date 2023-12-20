@@ -1,4 +1,6 @@
-﻿using SkroutzLastMileClient.ResponseModels;
+﻿using Microsoft.AspNetCore.WebUtilities;
+using SkroutzLastMileClient.ResponseModels;
+using System.Web;
 
 namespace SkroutzLastMileClient
 {
@@ -50,7 +52,7 @@ namespace SkroutzLastMileClient
         /// <returns></returns>
         public async Task<WebRequestResult<ShippingOrderResponseModel>> CreateShippingOrderAsync(CreateShippingOrderRequestModel model)
         {
-            var result = await Client.PostAsync<InternalShippingOrderResponseModel>(SkroutzLastMileRoutes.GetNewShippingOrderRoute(BaseRoute), model, Credentials.APIKey);
+            var result = await Client.PostAsync<InternalShippingOrderResponseModel>(SkroutzLastMileRoutes.GetNewShippingOrderRoute(BaseRoute), InternalCreateShippingOrderRequestModel.FromCreateShippingOrderRequestModel(model), Credentials.APIKey);
 
             if (!result.IsSuccessful)
                 return result.ToUnsuccessfulWebRequestResult<ShippingOrderResponseModel>();
@@ -81,7 +83,46 @@ namespace SkroutzLastMileClient
         /// <param name="model">The model</param>
         /// <returns></returns>
         public Task<WebRequestResult<ShippingOrderResponseModel>> UpdateShippingOrderAsync(string orderId, UpdateShippingOrderRequestModel model)
-            => Client.PutAsync<ShippingOrderResponseModel>(SkroutzLastMileRoutes.GetShippingOrderRoute(BaseRoute, orderId), model, Credentials.APIKey);
+            => Client.PutAsync<ShippingOrderResponseModel>(SkroutzLastMileRoutes.GetShippingOrderRoute(BaseRoute, orderId), InternalUpdateShippingOrderRequestModel.FromUpdateShippingOrderRequestModel(model), Credentials.APIKey);
+
+        /// <summary>
+        /// Gets the voucher related to the specified <paramref name="trackingId"/> as a byte array
+        /// that represents a PDF file
+        /// </summary>
+        /// <param name="trackingId">The tracking id</param>
+        /// <param name="paperSize">The paper size</param>
+        /// <returns></returns>
+        public Task<IFailable<byte[]>> GetShippingOrderVoucherAsPDFAsync(string trackingId, PaperSize paperSize)
+        {
+            var url = SkroutzLastMileRoutes.GetShippingOrderVoucherRoute(BaseRoute, trackingId);
+
+            url = QueryHelpers.AddQueryString(url, SkroutzLastMileClientConstants.DirectDownloadQueryArgumentName, "true");
+            url = QueryHelpers.AddQueryString(url, SkroutzLastMileClientConstants.PaperSizeQueryArgumentName, SkroutzLastMileClientConstants.PaperSizeToStringMapper[paperSize]);
+
+            return Client.GetBytesAsync(url, Credentials.APIKey);
+        }
+
+        /// <summary>
+        /// Gets the voucher related to the specified <paramref name="trackingId"/> as a Base64 string
+        /// that represents a PDF file
+        /// </summary>
+        /// <param name="trackingId">The tracking id</param>
+        /// <param name="paperSize">The paper size</param>
+        /// <returns></returns>
+        public async Task<IFailable<string>> GetShippingOrderVoucherAsBase64StringAsync(string trackingId, PaperSize paperSize)
+        {
+            var url = SkroutzLastMileRoutes.GetShippingOrderVoucherRoute(BaseRoute, trackingId);
+
+            url = QueryHelpers.AddQueryString(url, SkroutzLastMileClientConstants.DirectDownloadQueryArgumentName, "false");
+            url = QueryHelpers.AddQueryString(url, SkroutzLastMileClientConstants.PaperSizeQueryArgumentName, SkroutzLastMileClientConstants.PaperSizeToStringMapper[paperSize]);
+
+            var result = await Client.GetBytesAsync(url, Credentials.APIKey);
+
+            if (!result.IsSuccessful)
+                return new Failable<string>() { ErrorMessage = result.ErrorMessage };
+
+            return new Failable<string>() { Result = Convert.ToBase64String(result.Result) };
+        }
 
         /// <summary>
         /// Gets all the Skroutz points

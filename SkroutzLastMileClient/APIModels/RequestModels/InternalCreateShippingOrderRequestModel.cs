@@ -7,7 +7,7 @@ namespace SkroutzLastMileClient
     /// <summary>
     /// Request model used for creating a shipping order
     /// </summary>
-    public class CreateShippingOrderRequestModel : UpdateShippingOrderRequestModel
+    internal class InternalCreateShippingOrderRequestModel : InternalUpdateShippingOrderRequestModel
     {
         #region Public Properties
 
@@ -79,9 +79,38 @@ namespace SkroutzLastMileClient
         /// <summary>
         /// Default constructor
         /// </summary>
-        public CreateShippingOrderRequestModel() : base()
+        public InternalCreateShippingOrderRequestModel() : base()
         {
 
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// Creates and returns a <see cref="InternalCreateShippingOrderRequestModel"/> from the specified <paramref name="model"/>
+        /// </summary>
+        /// <param name="model">The model</param>
+        /// <returns></returns>
+        public static InternalCreateShippingOrderRequestModel FromCreateShippingOrderRequestModel(CreateShippingOrderRequestModel model)
+        {
+            return new InternalCreateShippingOrderRequestModel()
+            {
+                PickupDate = model.PickupDate,
+                PickupTimeFrom = model.PickupDate is null || model.PickupTimeFrom is null ? null : new DateTime(model.PickupDate.Value.Year, model.PickupDate.Value.Month, model.PickupDate.Value.Day, model.PickupTimeFrom.Value.Hour, model.PickupTimeFrom.Value.Minute, model.PickupTimeFrom.Value.Second),
+                PickupTimeTo = model.PickupDate is null || model.PickupTimeTo is null ? null : new DateTime(model.PickupDate.Value.Year, model.PickupDate.Value.Month, model.PickupDate.Value.Day, model.PickupTimeTo.Value.Hour, model.PickupTimeTo.Value.Minute, model.PickupTimeTo.Value.Second),
+                CustomerReference = model.CustomerReference,
+                IsReturn = model.IsReturn,
+                NumberOfParcels = model.NumberOfParcels,
+                PickupLocationCode = model.PickupLocationCode,
+                PickupNotes = model.PickupNotes,
+                RecipientName = model.RecipientName,
+                RecipientPhone = model.RecipientPhone,
+                SenderPhone = model.SenderPhone,
+                SkroutzPointId = model.SkroutzPointId,
+                Weight = model.Weight
+            };
         }
 
         #endregion

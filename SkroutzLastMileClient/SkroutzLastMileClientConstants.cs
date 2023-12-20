@@ -8,6 +8,25 @@ namespace SkroutzLastMileClient
     public static class SkroutzLastMileClientConstants
     {
         /// <summary>
+        /// The query argument that is used when retrieving a voucher PDF and is used for determining the encoding
+        /// of the returned data.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// If set <see cref="true"/> then the voucher is returned as a stream representing the PDF file.
+        /// </para>
+        /// <para>
+        /// If set <see cref="false"/> then the voucher PDF is returned as a Base64 encoded string.
+        /// </para>
+        /// </remarks>
+        public const string DirectDownloadQueryArgumentName = "direct_download";
+
+        /// <summary>
+        /// The query argument that is used for determining the size of the voucher that is generated
+        /// </summary>
+        public const string PaperSizeQueryArgumentName = "paper_size";
+
+        /// <summary>
         /// Maps the <see cref="DayOfWeek"/> to their related <see cref="string"/>s
         /// </summary>
         public static IReadOnlyDictionary<DayOfWeek, string> DayOfWeekToStringMapper { get; } = Enum.GetValues<DayOfWeek>().ToDictionary(x => x, x => x.ToString()).ToImmutableDictionary();
@@ -26,6 +45,15 @@ namespace SkroutzLastMileClient
             { StatusDescriptionType.ReturningToSender, "returning_to_sender" },
             { StatusDescriptionType.AttemptedDelivery, "attempted_delivery" },
             { StatusDescriptionType.AtLocker, "at_locker" }
+        }.ToImmutableDictionary();
+
+        /// <summary>
+        /// Maps the <see cref="PaperSize"/>s to their related <see cref="string"/>s
+        /// </summary>
+        public static IReadOnlyDictionary<PaperSize, string> PaperSizeToStringMapper { get; } = new Dictionary<PaperSize, string>()
+        {
+            { PaperSize.A4, "A4" },
+            { PaperSize.Thermal, "thermal" },
         }.ToImmutableDictionary();
     }
 }
