@@ -1,0 +1,1683 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SkroutzLastMileClient</name>
+    </assembly>
+    <members>
+        <member name="T:SkroutzLastMileClient.CreateShippingOrderRequestModel">
+            <summary>
+            A shipping order response
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.CreateShippingOrderRequestModel.CustomerReference">
+            <summary>
+            The customer reference (Your internal unique identifier of the order)
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.CreateShippingOrderRequestModel.IsReturn">
+            <summary>
+            Indicates if the shipment is a return (Always use false)
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.CreateShippingOrderRequestModel.NumberOfParcels">
+            <summary>
+            The number of parcels (Always use 1. Multiple-package orders are not supported for locker deliveries.)
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.CreateShippingOrderRequestModel.PickupLocationCode">
+            <summary>
+            The unique code for the pickup location. It corresponds to a pre-agreed location for picking up parcels. 
+            A merchant can have multiple pickup location codes where each one corresponds to a different pickup location.
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.CreateShippingOrderRequestModel.PickupNotes">
+            <summary>
+            Any additional notes for the pickup.
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.CreateShippingOrderRequestModel.RecipientName">
+            <summary>
+            The full name of the recipient
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.CreateShippingOrderRequestModel.RecipientPhone">
+            <summary>
+            The mobile phone number of the recipient
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.CreateShippingOrderRequestModel.SenderPhone">
+            <summary>
+            The phone number of the merchant
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.CreateShippingOrderRequestModel.SkroutzPointId">
+            <summary>
+            The Id of the chosen Skroutz Point locker from the map
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.CreateShippingOrderRequestModel.Weight">
+            <summary>
+            The weight of the parcel
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.CreateShippingOrderRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:SkroutzLastMileClient.UpdateShippingOrderRequestModel">
+            <summary>
+            Used to reschedule the pickup date and time window for an order. 
+            Use the same instruction for these fields as in the order creation endpoint.
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.UpdateShippingOrderRequestModel.PickupDate">
+            <summary>
+            The date of the order pickup
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.UpdateShippingOrderRequestModel.PickupTimeFrom">
+            <summary>
+            The start time of the pickup window
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.UpdateShippingOrderRequestModel.PickupTimeTo">
+            <summary>
+            The end time of the pickup window
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.UpdateShippingOrderRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:SkroutzLastMileClient.AvailabilityShiftResponseModel">
+            <summary>
+            Provides information about the working hours
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.AvailabilityShiftResponseModel.From">
+            <summary>
+            The time when the locker is available from
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.AvailabilityShiftResponseModel.To">
+            <summary>
+            The time when the locker is available to
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.AvailabilityShiftResponseModel.DayOfWeek">
+            <summary>
+            The day the locker is available
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.AvailabilityShiftResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.AvailabilityShiftResponseModel.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:SkroutzLastMileClient.ResponseModels.DeleteOrderResponseModel">
+            <summary>
+            Cancel an order any time before it is received by the customer.
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.ResponseModels.DeleteOrderResponseModel.IsSuccessful">
+            <summary>
+            Indicates if the order is canceled before reaching to customer
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.ResponseModels.DeleteOrderResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.ResponseModels.DeleteOrderResponseModel.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:SkroutzLastMileClient.InternalShippingOrderResponseModel">
+            <summary>
+            The shipping order response
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.InternalShippingOrderResponseModel.mOrderId">
+            <summary>
+            The member of the <see cref="P:SkroutzLastMileClient.InternalShippingOrderResponseModel.OrderId"/>
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.InternalShippingOrderResponseModel.mTrackingIds">
+            <summary>
+            The member of the <see cref="P:SkroutzLastMileClient.InternalShippingOrderResponseModel.TrackingIds"/>
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.InternalShippingOrderResponseModel.IsSuccessful">
+            <summary>
+            Indicates if the creation of the shipping order is successful
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.InternalShippingOrderResponseModel.OrderId">
+            <summary>
+            The order id
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.InternalShippingOrderResponseModel.TrackingIds">
+            <summary>
+            The tracking id
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.InternalShippingOrderResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.InternalShippingOrderResponseModel.ToShippingOrderResponseModel">
+            <summary>
+            Creates and returns a <see cref="T:SkroutzLastMileClient.ShippingOrderResponseModel"/> from the current <see cref="T:SkroutzLastMileClient.InternalShippingOrderResponseModel"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SkroutzLastMileClient.InternalSkroutzPointResponseModel">
+            <summary>
+            Represents a set of Skroutz points
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.InternalSkroutzPointResponseModel.mSkroutzPoints">
+            <summary>
+            The member of the <see cref="P:SkroutzLastMileClient.InternalSkroutzPointResponseModel.SkroutzPoints"/>
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.InternalSkroutzPointResponseModel.SkroutzPoints">
+            <summary>
+            The Skroutz points
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.InternalSkroutzPointResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:SkroutzLastMileClient.ShipmentTrackResponseModel">
+            <summary>
+            Returns tracking information on the parcel delivery and pickup.
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.ShipmentTrackResponseModel.mTrackingId">
+            <summary>
+            The member of the <see cref="P:SkroutzLastMileClient.ShipmentTrackResponseModel.TrackingId"/>
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.ShipmentTrackResponseModel.TrackingId">
+            <summary>
+            The tracking ID of the shipment
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.ShipmentTrackResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.ShipmentTrackResponseModel.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:SkroutzLastMileClient.ShippingOrderResponseModel">
+            <summary>
+            The shipping order response
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.ShippingOrderResponseModel.mOrderId">
+            <summary>
+            The member of the <see cref="P:SkroutzLastMileClient.ShippingOrderResponseModel.OrderId"/>
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.ShippingOrderResponseModel.mTrackingId">
+            <summary>
+            The member of the <see cref="P:SkroutzLastMileClient.ShippingOrderResponseModel.TrackingId"/>
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.ShippingOrderResponseModel.IsSuccessful">
+            <summary>
+            Indicates if the creation of the shipping order is successful
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.ShippingOrderResponseModel.OrderId">
+            <summary>
+            The order id
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.ShippingOrderResponseModel.TrackingId">
+            <summary>
+            The tracking id
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.ShippingOrderResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.ShippingOrderResponseModel.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:SkroutzLastMileClient.SkroutzPointResponseModel">
+            <summary>
+            Returns all available lockers for the consumer to choose from.
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.SkroutzPointResponseModel.mId">
+            <summary>
+            The member of the <see cref="P:SkroutzLastMileClient.SkroutzPointResponseModel.Id"/>
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.SkroutzPointResponseModel.mType">
+            <summary>
+            The member of the <see cref="P:SkroutzLastMileClient.SkroutzPointResponseModel.Type"/>
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.SkroutzPointResponseModel.mName">
+            <summary>
+            The member of the <see cref="P:SkroutzLastMileClient.SkroutzPointResponseModel.Name"/>
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.SkroutzPointResponseModel.mStreetName">
+            <summary>
+            The member of the <see cref="P:SkroutzLastMileClient.SkroutzPointResponseModel.StreetName"/>
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.SkroutzPointResponseModel.mCity">
+            <summary>
+            The member of the <see cref="P:SkroutzLastMileClient.SkroutzPointResponseModel.City"/>
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.SkroutzPointResponseModel.mRegion">
+            <summary>
+            The member of the <see cref="P:SkroutzLastMileClient.SkroutzPointResponseModel.Region"/>
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.SkroutzPointResponseModel.mWorkingHours">
+            <summary>
+            The member of the <see cref="P:SkroutzLastMileClient.SkroutzPointResponseModel.WorkingHours"/>
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.SkroutzPointResponseModel.mModel">
+            <summary>
+            The member of the <see cref="P:SkroutzLastMileClient.SkroutzPointResponseModel.Model"/>
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.SkroutzPointResponseModel.mSwipboxVersion">
+            <summary>
+            The member of the <see cref="P:SkroutzLastMileClient.SkroutzPointResponseModel.SwipboxVersion"/>
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.SkroutzPointResponseModel.Id">
+            <summary>
+            The id
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.SkroutzPointResponseModel.Type">
+            <summary>
+            The type
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.SkroutzPointResponseModel.Name">
+            <summary>
+            The name of the locker
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.SkroutzPointResponseModel.StreetName">
+            <summary>
+            The locker's street name
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.SkroutzPointResponseModel.StreetNumber">
+            <summary>
+            The locker's street number
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.SkroutzPointResponseModel.City">
+            <summary>
+            The locker's city
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.SkroutzPointResponseModel.ZipCode">
+            <summary>
+            The zip code
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.SkroutzPointResponseModel.Region">
+            <summary>
+            The region
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.SkroutzPointResponseModel.WorkingHours">
+            <summary>
+            The working hours
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.SkroutzPointResponseModel.IsIndoor">
+            <summary>
+            Indicates if the locker is indoors
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.SkroutzPointResponseModel.Longitude">
+            <summary>
+            Longitude in decimal degrees
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.SkroutzPointResponseModel.Latitude">
+            <summary>
+            Latitude in decimal degrees
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.SkroutzPointResponseModel.Model">
+            <summary>
+            The locker's model
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.SkroutzPointResponseModel.IsActive">
+            <summary>
+            Indicates if the locker is active
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.SkroutzPointResponseModel.IsObsolete">
+            <summary>
+            Indicates if the locker is obsolete
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.SkroutzPointResponseModel.SwipboxVersion">
+            <summary>
+            The swipbox version
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.SkroutzPointResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.SkroutzPointResponseModel.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:SkroutzLastMileClient.SkroutzLastMileCredentials">
+            <summary>
+            The Skroutz Last Mile credentials
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.SkroutzLastMileCredentials.APIKey">
+            <summary>
+            The API key
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.SkroutzLastMileCredentials.APIURL">
+            <summary>
+            The API url
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.SkroutzLastMileCredentials.#ctor(System.String,System.String)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="apiKey">The API key</param>
+            <param name="apiURL">The API url</param>
+        </member>
+        <member name="T:SkroutzLastMileClient.ErrorType">
+            <summary>
+            Provides enumeration over the error types
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.ErrorType.Error">
+            <summary>
+            A standard error
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.ErrorType.Warning">
+            <summary>
+            A warning
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.ErrorType.Information">
+            <summary>
+            An informative message
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.ErrorType.Hidden">
+            <summary>
+            An error that should get hidden
+            </summary>
+        </member>
+        <member name="T:SkroutzLastMileClient.StatusDescriptionType">
+            <summary>
+            Provides enumeration for status description type
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.StatusDescriptionType.AwaitingPickup">
+            <summary>
+            Parcel Awaiting pickup
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.StatusDescriptionType.PickedUp">
+            <summary>
+            Parcel picked up
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.StatusDescriptionType.AssignedToCourierForDelivery">
+            <summary>
+            Parcel assigned to courier for delivery
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.StatusDescriptionType.Delivered">
+            <summary>
+            Parcel delivered
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.StatusDescriptionType.RecipientRejected">
+            <summary>
+            Parcel recipient rejected
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.StatusDescriptionType.ReturnedToSender">
+            <summary>
+            Parcel returned to sender
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.StatusDescriptionType.ReturningToSender">
+            <summary>
+            Parcel returning to sender
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.StatusDescriptionType.AttemptedDelivery">
+            <summary>
+            Parcel attempted delivery
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.StatusDescriptionType.LostOrDamaged">
+            <summary>
+            Parcel lost or damaged
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.StatusDescriptionType.AtLocker">
+            <summary>
+            Parcel at locker
+            </summary>
+        </member>
+        <member name="T:SkroutzLastMileClient.ExtensionMethods">
+            <summary>
+            Extension methods
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.ExtensionMethods.AggregateExceptionMessages(System.Exception)">
+            <summary>
+            Aggregates the <see cref="P:System.Exception.Message"/> in the <paramref name="exception"/> exception stack trace
+            </summary>
+            <param name="exception">The exception</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.ExtensionMethods.IsNullOrEmpty(System.String)">
+            <summary>
+            Checks whether the string is null or empty
+            </summary>
+            <param name="value">The value</param>
+            <returns>Returns true if the string is null or empty, false otherwise</returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.ExtensionMethods.IsNullOrEmpty(System.Collections.IEnumerable)">
+            <summary>
+            Checks if the specified <paramref name="enumerable"/> is <see cref="!:null"/> or 
+            if it doesn't have any items.
+            </summary>
+            <param name="enumerable">The enumerable</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.ExtensionMethods.AggregateString``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String},System.Func{System.String,System.String,System.String})">
+            <summary>
+            Aggregates the specified <paramref name="source"/> into a <see cref="T:System.String"/>
+            </summary>
+            <typeparam name="T">The type of the items</typeparam>
+            <param name="source">The source</param>
+            <param name="extractor">The string extractor that is used to convert an item to a string</param>
+            <param name="func">Delegate that places the extracted strings in order</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.ExtensionMethods.AggregateString``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String},System.String)">
+            <summary>
+            Aggregates the specified <paramref name="source"/> into a <see cref="T:System.String"/>
+            </summary>
+            <typeparam name="T">The type of the items</typeparam>
+            <param name="source">The source</param>
+            <param name="extractor">The string extractor that is used to convert an item to a string</param>
+            <param name="separator">The separator</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.ExtensionMethods.AggregateString``1(System.Collections.Generic.IEnumerable{``0},System.Func{System.String,System.String,System.String})">
+            <summary>
+            Aggregates the specified <paramref name="source"/> into a <see cref="T:System.String"/>.
+            NOTE: This method converts the items of the <paramref name="source"/> to <see cref="T:System.String"/>
+                  using the <see cref="M:System.Object.ToString"/> method!
+            </summary>
+            <typeparam name="T">The type of the items</typeparam>
+            <param name="source">The source</param>
+            <param name="func">Delegate that places the extracted strings in order</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.ExtensionMethods.AggregateString``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>
+            Aggregates the specified <paramref name="source"/> into a <see cref="T:System.String"/>.
+            NOTE: This method converts the items of the <paramref name="source"/> to <see cref="T:System.String"/>
+                  using the <see cref="M:System.Object.ToString"/> method!
+            NOTE: This method uses ", " as the items separator!
+            </summary>
+            <typeparam name="T">The type of the items</typeparam>
+            <param name="source">The source</param>
+            <param name="separator">The separator</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.ExtensionMethods.ToISO8601String(System.DateOnly)">
+            <summary>
+            Returns a string that represents the specified <paramref name="value"/> using the ISO8601 format
+            </summary>
+            <param name="value">The value</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.ExtensionMethods.ToISO8601String(System.DateTimeOffset)">
+            <summary>
+            Returns a string that represents the specified <paramref name="dto"/> using the ISO8601 format
+            </summary>
+            <param name="dto">The date time offset</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.ExtensionMethods.ToISO8601String(System.TimeOnly)">
+            <summary>
+            Returns a string that represents the specified <paramref name="value"/> using the ISO8601 format
+            </summary>
+            <param name="value">The value</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.ExtensionMethods.ToISO8601String(System.DateTime)">
+            <summary>
+            Returns a string that represents the specified <paramref name="dt"/> using the ISO8601 format
+            </summary>
+            <param name="dt">The date time</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.ExtensionMethods.FirstCharToLower(System.String)">
+            <summary>
+            Returns the specified <paramref name="s"/> with the first char converted to lower case
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.ExtensionMethods.IsDate(System.Type)">
+            <summary>
+            Checks if the specified <paramref name="type"/> is a type that represents a date
+            </summary>
+            <param name="type">The type</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.ExtensionMethods.IsEnumerable(System.Type)">
+            <summary>
+            Checks whether the specified <paramref name="type"/> implements the <see cref="T:System.Collections.IEnumerable"/>
+            or it's it self the <see cref="T:System.Collections.IEnumerable"/>
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.ExtensionMethods.NotNullOrEmpty(System.String)">
+            <summary>
+            Returns the specified <paramref name="value"/> if it's not null or empty,
+            otherwise it throws an <see cref="T:System.ArgumentNullException"/>
+            </summary>
+            <param name="value">The value</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.ExtensionMethods.CreateWebRequestResultAsync(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Returns a <see cref="T:SkroutzLastMileClient.WebRequestResult"/> pre-populated with the <see cref="T:System.Net.HttpWebResponse"/> information
+            </summary>
+            <param name="serverResponse">The server response</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.ExtensionMethods.CreateWebRequestResultFromStreamAsync(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Returns a <see cref="T:SkroutzLastMileClient.WebRequestResult`1"/> pre-populated with the <see cref="T:System.Net.HttpWebResponse"/> information
+            read as stream
+            </summary>
+            <param name="serverResponse">The server response</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.ExtensionMethods.CreateWebRequestResultAsync``1(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Returns a <see cref="T:SkroutzLastMileClient.WebRequestResult`1"/> pre-populated with the <see cref="T:System.Net.HttpWebResponse"/> information
+            </summary>
+            <typeparam name="TResponse">The type of response to create</typeparam>
+            <param name="serverResponse">The server response</param>
+            <returns></returns>
+        </member>
+        <member name="T:SkroutzLastMileClient.Failable">
+            <summary>
+            The default implementation of the <see cref="T:SkroutzLastMileClient.IFailable"/> interface
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.Failable.mException">
+            <summary>
+            The member of the <see cref="P:SkroutzLastMileClient.Failable.Exception"/> property
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.Failable.Exception">
+            <summary>
+            The exception that was thrown
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.Failable.ErrorType">
+            <summary>
+            The error type
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.Failable.ErrorMessage">
+            <summary>
+            The error message
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.Failable.IsSuccessful">
+            <summary>
+            A flag indicating whether the task was successful or not
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.Failable.Success">
+            <summary>
+            The instance of the <see cref="T:SkroutzLastMileClient.Failable"/> that indicates a successful operation
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.Failable.OperationAbortedErrorMessage">
+            <summary>
+            Error message indicating that the operation was aborted
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.Failable.OperationAborted">
+            <summary>
+            The instance of the <see cref="T:SkroutzLastMileClient.Failable"/> that is used for indicating an operation
+            that was aborted with a hidden error
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.Failable.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.Failable.#ctor(System.Exception)">
+            <summary>
+            Exception based constructor
+            </summary>
+            <param name="ex">The exception</param>
+        </member>
+        <member name="M:SkroutzLastMileClient.Failable.FromException(System.Exception)">
+            <summary>
+            Creates and returns a <see cref="T:SkroutzLastMileClient.Failable"/> from the specified <paramref name="ex"/>
+            </summary>
+            <param name="ex">The exception</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.Failable.FromErrorMessage(System.String)">
+            <summary>
+            Creates and returns a <see cref="T:SkroutzLastMileClient.Failable"/> from the specified <paramref name="errorMessage"/>
+            </summary>
+            <param name="errorMessage">The error message</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.Failable.FromResult``1(``0)">
+            <summary>
+            Creates and returns a <see cref="T:SkroutzLastMileClient.Failable`1"/> that represents the specified <paramref name="result"/>
+            </summary>
+            <typeparam name="T">The type of the result</typeparam>
+            <param name="result">The result</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.Failable.FromException``1(System.Exception)">
+            <summary>
+            Creates and returns a <see cref="T:SkroutzLastMileClient.Failable`1"/> that represents the specified <paramref name="ex"/>
+            </summary>
+            <typeparam name="T">The type of the result</typeparam>
+            <param name="ex">The exception</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.Failable.FromErrorMessage``1(System.String)">
+            <summary>
+            Creates and returns a <see cref="T:SkroutzLastMileClient.Failable`1"/> that represents the specified <paramref name="errorMessage"/>
+            </summary>
+            <typeparam name="T">The type of the result</typeparam>
+            <param name="errorMessage">The error message</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.Failable.FromAbortedOperation``1">
+            <summary>
+            Creates and returns a <see cref="T:SkroutzLastMileClient.Failable`1"/> that represents an aborted operation
+            </summary>
+            <typeparam name="T">The type of the result</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.Failable.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.Failable.op_Implicit(System.String)~SkroutzLastMileClient.Failable">
+            <summary>
+            Creates a <see cref="T:SkroutzLastMileClient.Failable"/> using the specified string as its error message
+            </summary>
+            <param name="s">The string</param>
+        </member>
+        <member name="M:SkroutzLastMileClient.Failable.op_Implicit(System.Exception)~SkroutzLastMileClient.Failable">
+            <summary>
+            Creates a <see cref="T:SkroutzLastMileClient.Failable"/> using the message of the specified ex and its inner exceptions
+            as its error message
+            </summary>
+            <param name="ex">The exception</param>
+        </member>
+        <member name="T:SkroutzLastMileClient.SuccessOnlyFailable">
+            <summary>
+            An internal implementation of the <see cref="T:SkroutzLastMileClient.Failable"/> that always has
+            a successful state
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.SuccessOnlyFailable.ErrorMessage">
+            <summary>
+            The error message
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.SuccessOnlyFailable.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:SkroutzLastMileClient.OperationAbortedOnlyFailable">
+            <summary>
+            An internal implementation of the <see cref="T:SkroutzLastMileClient.Failable"/> that is used for 
+            indicating an aborted operation
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.OperationAbortedOnlyFailable.ErrorMessage">
+            <summary>
+            The error message
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.OperationAbortedOnlyFailable.ErrorType">
+            <summary>
+            The error type
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.OperationAbortedOnlyFailable.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:SkroutzLastMileClient.Failable`1">
+            <summary>
+            The default implementation of the <see cref="T:SkroutzLastMileClient.IFailable`1"/> interface
+            </summary>
+            <typeparam name="TResult">The type of the result</typeparam>
+        </member>
+        <member name="F:SkroutzLastMileClient.Failable`1.ExceptionMessage">
+            <summary>
+            The error message for the exception
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.Failable`1.mResult">
+            <summary>
+            The member of the <see cref="P:SkroutzLastMileClient.Failable`1.Result"/>
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.Failable`1.Result">
+            <summary>
+            The result
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.Failable`1.OperationAborted">
+            <summary>
+            The instance of the <see cref="T:SkroutzLastMileClient.Failable`1"/> that is used for indicating an operation
+            that was aborted with a hidden error
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.Failable`1.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.Failable`1.#ctor(`0)">
+            <summary>
+            Result based constructor
+            </summary>
+            <param name="result">The result</param>
+        </member>
+        <member name="M:SkroutzLastMileClient.Failable`1.#ctor(System.Exception)">
+            <summary>
+            Exception based constructor
+            </summary>
+            <param name="ex">The exception</param>
+        </member>
+        <member name="M:SkroutzLastMileClient.Failable`1.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.Failable`1.op_Implicit(System.String)~SkroutzLastMileClient.Failable{`0}">
+            <summary>
+            Creates a <see cref="T:SkroutzLastMileClient.Failable`1"/> using the specified string as its error message
+            </summary>
+            <param name="s">The string</param>
+        </member>
+        <member name="M:SkroutzLastMileClient.Failable`1.op_Implicit(System.Exception)~SkroutzLastMileClient.Failable{`0}">
+            <summary>
+            Creates a <see cref="T:SkroutzLastMileClient.Failable`1"/> using the message of the specified ex and its inner exceptions
+            as its error message
+            </summary>
+            <param name="ex">The exception</param>
+        </member>
+        <member name="M:SkroutzLastMileClient.Failable`1.op_Implicit(`0)~SkroutzLastMileClient.Failable{`0}">
+            <summary>
+            Creates a <see cref="T:SkroutzLastMileClient.Failable`1"/> using the specified result as its result
+            </summary>
+            <param name="result">The result</param>
+        </member>
+        <member name="T:SkroutzLastMileClient.OperationAbortedOnlyFailable`1">
+            <summary>
+            An internal implementation of the <see cref="T:SkroutzLastMileClient.Failable`1"/> that is used for 
+            indicating an aborted operation
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.OperationAbortedOnlyFailable`1.ErrorMessage">
+            <summary>
+            The error message
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.OperationAbortedOnlyFailable`1.ErrorType">
+            <summary>
+            The error type
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.OperationAbortedOnlyFailable`1.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:SkroutzLastMileClient.IFailable">
+            <summary>
+            Provides abstractions for an object that can fail its task
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.IFailable.Success">
+            <summary>
+            The instance of the <see cref="T:SkroutzLastMileClient.IFailable"/> that indicates a successful operation
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.IFailable.OperationAborted">
+            <summary>
+            The instance of the <see cref="T:SkroutzLastMileClient.IFailable"/> that is used for indicating an operation
+            that was aborted with a hidden error
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.IFailable.Exception">
+            <summary>
+            The exception that was thrown
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.IFailable.ErrorType">
+            <summary>
+            The error type
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.IFailable.ErrorMessage">
+            <summary>
+            The error message
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.IFailable.IsSuccessful">
+            <summary>
+            A flag indicating whether the task was successful or not
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.IFailable.FromException(System.Exception)">
+            <summary>
+            Creates and returns a <see cref="T:SkroutzLastMileClient.IFailable"/> from the specified <paramref name="ex"/>
+            </summary>
+            <param name="ex">The exception</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.IFailable.FromErrorMessage(System.String)">
+            <summary>
+            Creates and returns a <see cref="T:SkroutzLastMileClient.IFailable"/> from the specified <paramref name="errorMessage"/>
+            </summary>
+            <param name="errorMessage">The error message</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.IFailable.FromResult``1(``0)">
+            <summary>
+            Creates and returns a <see cref="T:SkroutzLastMileClient.IFailable`1"/> that represents the specified <paramref name="result"/>
+            </summary>
+            <typeparam name="T">The type of the result</typeparam>
+            <param name="result">The result</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.IFailable.FromException``1(System.Exception)">
+            <summary>
+            Creates and returns a <see cref="T:SkroutzLastMileClient.IFailable`1"/> that represents the specified <paramref name="ex"/>
+            </summary>
+            <typeparam name="T">The type of the result</typeparam>
+            <param name="ex">The exception</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.IFailable.FromErrorMessage``1(System.String)">
+            <summary>
+            Creates and returns a <see cref="T:SkroutzLastMileClient.Failable`1"/> that represents the specified <paramref name="errorMessage"/>
+            </summary>
+            <typeparam name="T">The type of the result</typeparam>
+            <param name="errorMessage">The error message</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.IFailable.FromAbortedOperation``1">
+            <summary>
+            Creates and returns a <see cref="T:SkroutzLastMileClient.IFailable`1"/> that represents an aborted operation
+            </summary>
+            <typeparam name="T">The type of the result</typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:SkroutzLastMileClient.IFailable`1">
+            <summary>
+            A <see cref="T:SkroutzLastMileClient.IFailable"/> that contains a result
+            </summary>
+            <typeparam name="TResult">The type of the result</typeparam>
+        </member>
+        <member name="P:SkroutzLastMileClient.IFailable`1.OperationAborted">
+            <summary>
+            The instance of the <see cref="T:SkroutzLastMileClient.IFailable`1"/> that is used for indicating an operation
+            that was aborted with a hidden error
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.IFailable`1.Result">
+            <summary>
+            The result
+            </summary>
+        </member>
+        <member name="T:SkroutzLastMileClient.WebRequestResult">
+            <summary>
+            A web response from a call to get generic object data from a HTTP server
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.WebRequestResult.DefaultHeaders">
+            <summary>
+            The default headers
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.WebRequestResult.ExceptionMessage">
+            <summary>
+            The error message for the exception
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.WebRequestResult.mException">
+            <summary>
+            The member of the <see cref="P:SkroutzLastMileClient.WebRequestResult.Exception"/> property
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.WebRequestResult.mResult">
+            <summary>
+            The member of the <see cref="P:SkroutzLastMileClient.WebRequestResult.Result"/>
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.WebRequestResult.Exception">
+            <summary>
+            The exception that was thrown
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.WebRequestResult.ErrorType">
+            <summary>
+            The error type
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.WebRequestResult.ErrorMessage">
+            <summary>
+            If something failed, this is the error message.
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.WebRequestResult.IsSuccessful">
+            <summary>
+            A flag indicating whether the request was successful 
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.WebRequestResult.StatusCode">
+            <summary>
+            The status code
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.WebRequestResult.StatusDescription">
+            <summary>
+            The status description
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.WebRequestResult.ContentType">
+            <summary>
+            The type of content returned by the server
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.WebRequestResult.Headers">
+            <summary>
+            All the response headers
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.WebRequestResult.RawServerResponse">
+            <summary>
+            The raw server response body
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.WebRequestResult.Result">
+            <summary>
+            The actual server response as an object
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestResult.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestResult.#ctor(System.Exception)">
+            <summary>
+            Exception based constructor
+            </summary>
+            <param name="ex">The exception</param>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestResult.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestResult.op_Implicit(System.String)~SkroutzLastMileClient.WebRequestResult">
+            <summary>
+            Creates a <see cref="T:SkroutzLastMileClient.WebRequestResult"/> using the specified string as its error message
+            </summary>
+            <param name="s">The string</param>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestResult.op_Implicit(System.Exception)~SkroutzLastMileClient.WebRequestResult">
+            <summary>
+            Creates a <see cref="T:SkroutzLastMileClient.Failable"/> using the message of the specified ex and its inner exceptions
+            as its error message
+            </summary>
+            <param name="ex">The exception</param>
+        </member>
+        <member name="T:SkroutzLastMileClient.WebRequestResult`1">
+            <summary>
+            A web response from a call to get specific data from a HTTP server
+            </summary>
+            <typeparam name="TResult">The type of data to deserialize the raw body into</typeparam>
+        </member>
+        <member name="P:SkroutzLastMileClient.WebRequestResult`1.Result">
+            <summary>
+            Casts the underlying object to the specified type
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestResult`1.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestResult`1.#ctor(`0)">
+            <summary>
+            Result based constructor
+            </summary>
+            <param name="result">The result</param>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestResult`1.#ctor(System.Exception)">
+            <summary>
+            Exception based constructor
+            </summary>
+            <param name="ex">The exception</param>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestResult`1.ToUnsuccessfulWebRequestResult``1(System.String)">
+            <summary>
+            Creates and returns a <see cref="T:SkroutzLastMileClient.WebRequestResult`1"/> from the current object
+            </summary>
+            <typeparam name="T">The type of the failable</typeparam>
+            <param name="customErrorMessage">The custom error message</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestResult`1.ToSuccessfulWebRequestResult``1(System.Func{`0,``0})">
+            <summary>
+            Creates and returns a <see cref="T:SkroutzLastMileClient.WebRequestResult`1"/> from the current object
+            </summary>
+            <typeparam name="T">The type of the failable</typeparam>
+            <param name="valueConverter">The method that converts an instance of type <typeparamref name="TResult"/> to <typeparamref name="T"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestResult`1.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestResult`1.op_Implicit(System.String)~SkroutzLastMileClient.WebRequestResult{`0}">
+            <summary>
+            Creates a <see cref="T:SkroutzLastMileClient.WebRequestResult`1"/> using the specified string as its error message
+            </summary>
+            <param name="s">The string</param>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestResult`1.op_Implicit(System.Exception)~SkroutzLastMileClient.WebRequestResult{`0}">
+            <summary>
+            Creates a <see cref="T:SkroutzLastMileClient.WebRequestResult`1"/> using the message of the specified ex and its inner exceptions
+            as its error message
+            </summary>
+            <param name="ex">The exception</param>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestResult`1.op_Implicit(`0)~SkroutzLastMileClient.WebRequestResult{`0}">
+            <summary>
+            Creates a <see cref="T:SkroutzLastMileClient.WebRequestResult`1"/> using the specified result as its result
+            </summary>
+            <param name="result">The result</param>
+        </member>
+        <member name="T:SkroutzLastMileClient.IFailableHelpers">
+            <summary>
+            Helper methods for <see cref="T:SkroutzLastMileClient.IFailable"/>
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.IFailableHelpers.GetStringRepresentation(SkroutzLastMileClient.IFailable)">
+            <summary>
+            Gets the string representation of the specified <paramref name="failable"/>
+            </summary>
+            <param name="failable">The failable</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.IFailableHelpers.GetStringRepresentation``1(SkroutzLastMileClient.IFailable{``0})">
+            <summary>
+            Gets the string representation of the specified <paramref name="failable"/>
+            </summary>
+            <param name="failable">The failable</param>
+            <returns></returns>
+        </member>
+        <member name="T:SkroutzLastMileClient.BaseEnumJsonConverter`1">
+            <summary>
+            The base for all the <see cref="T:Newtonsoft.Json.JsonConverter`1"/>s that are used for converting between an <see cref="T:System.Enum"/> and a <see cref="T:System.String"/>
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.BaseEnumJsonConverter`1.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.BaseEnumJsonConverter`1.ReadJson(Newtonsoft.Json.JsonReader,System.Type,`0,System.Boolean,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkroutzLastMileClient.BaseEnumJsonConverter`1.WriteJson(Newtonsoft.Json.JsonWriter,`0,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkroutzLastMileClient.BaseEnumJsonConverter`1.GetMapper">
+            <summary>
+            Gets a <see cref="T:System.Collections.Generic.IReadOnlyDictionary`2"/> that maps the values of the <typeparamref name="T"/>
+            to <see cref="T:System.String"/>s
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SkroutzLastMileClient.DateOnlyToStringJsonConverter">
+            <summary>
+            The <see cref="T:Newtonsoft.Json.JsonConverter"/> that converts a <see cref="T:System.DateOnly"/> to <see cref="T:System.String"/>
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.DateOnlyToStringJsonConverter.DateFormat">
+            <summary>
+            The format that is used for serializing and deserializing <see cref="T:System.DateOnly"/>s
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.DateOnlyToStringJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.DateOnlyToStringJsonConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.DateOnly,System.Boolean,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkroutzLastMileClient.DateOnlyToStringJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.DateOnly,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/> 
+        </member>
+        <member name="T:SkroutzLastMileClient.DayfOfWeekToStringJsonConverter">
+            <summary>
+            The <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that converts a <see cref="T:System.DayOfWeek"/> to <see cref="T:System.String"/>s
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.DayfOfWeekToStringJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.DayfOfWeekToStringJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
+        <member name="T:SkroutzLastMileClient.StatusDescriptionToStringJsonConverter">
+            <summary>
+            The <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that converts a <see cref="T:SkroutzLastMileClient.StatusDescriptionType"/> to <see cref="T:System.String"/>s
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.StatusDescriptionToStringJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.StatusDescriptionToStringJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
+        <member name="T:SkroutzLastMileClient.TimeOnlyToStringJsonConverter">
+            <summary>
+            The <see cref="T:Newtonsoft.Json.JsonConverter"/> that converts a <see cref="T:System.TimeOnly"/> to <see cref="T:System.String"/>
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.TimeOnlyToStringJsonConverter.TimeFormat">
+            <summary>
+            The format that is used for serializing and deserializing <see cref="T:System.TimeOnly"/>s
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.TimeOnlyToStringJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.TimeOnlyToStringJsonConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.TimeOnly,System.Boolean,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SkroutzLastMileClient.TimeOnlyToStringJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.TimeOnly,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/> 
+        </member>
+        <member name="T:SkroutzLastMileClient.SkroutzLastMileClient">
+            <summary>
+            An agent that is capable of making requests to the Skroutz Last Mile API
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.SkroutzLastMileClient.Client">
+            <summary>
+            The client
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.SkroutzLastMileClient.Credentials">
+            <summary>
+            The credentials
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.SkroutzLastMileClient.BaseRoute">
+            <summary>
+            The base route
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.SkroutzLastMileClient.#ctor(SkroutzLastMileClient.SkroutzLastMileCredentials,System.Boolean)">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.SkroutzLastMileClient.CreateShippingOrderAsync(SkroutzLastMileClient.CreateShippingOrderRequestModel)">
+            <summary>
+            Creates a shipping order
+            </summary>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.SkroutzLastMileClient.TrackShipmentAsync(System.String)">
+            <summary>
+            Tracks a shipment
+            </summary>
+            <param name="trackingId">The tracking id</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.SkroutzLastMileClient.DeleteOrderAsync(System.String)">
+            <summary>
+            Deletes an order
+            </summary>
+            <param name="orderId">The order id</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.SkroutzLastMileClient.UpdateShippingOrderAsync(System.String,SkroutzLastMileClient.UpdateShippingOrderRequestModel)">
+            <summary>
+            Updates pickup date and time window
+            </summary>
+            <param name="orderId">The order id</param>
+            <param name="model">The model</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.SkroutzLastMileClient.GetAllSkroutzPointsAsync">
+            <summary>
+            Gets all the Skroutz points
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SkroutzLastMileClient.WebRequestsClient`1">
+            <summary>
+            Client that provides HTTP calls for sending and receiving information from a HTTP server
+            </summary>
+            <typeparam name="TAuthenticationArgs">
+            The type of the authentication args.
+            NOTE: The authentication args determine the authentication scheme that will be used against the server!
+            </typeparam>
+        </member>
+        <member name="F:SkroutzLastMileClient.WebRequestsClient`1.PATCH">
+            <summary>
+            The name of the PATCH HTTP method
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.WebRequestsClient`1.MediaTypeJson">
+            <summary>
+            The json request and response preferred media type
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.WebRequestsClient`1.DeserializationErrorMessage">
+            <summary>
+            The standard deserialization error message
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.WebRequestsClient`1.mClient">
+            <summary>
+            THe member of the <see cref="P:SkroutzLastMileClient.WebRequestsClient`1.Client"/> property
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.WebRequestsClient`1.Client">
+            <summary>
+            The HTTP client that is used for sending the HTTP requests
+            NOTE: HTTP client is recommended to be injected as a Singleton in DI
+                  https://stackoverflow.com/questions/4015324/how-to-make-http-post-web-request
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.PostAsync(System.String,System.Object,`0)">
+            <summary>
+            POSTs a web request to an URL that contains the specified <paramref name="content"/> and returns a <see cref="T:System.Net.Http.HttpResponseMessage"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="content">The content to post</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.PostBytesAsync(System.String,System.Object,`0)">
+            <summary>
+            POSTs a web request to an URL that contains the specified <paramref name="content"/> and returns a <see cref="T:SkroutzLastMileClient.WebRequestResult`1"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="content">The content to post</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.GetAsync(System.String,`0)">
+            <summary>
+            GETs a web request to a URL and returns a <see cref="T:System.Net.Http.HttpResponseMessage"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.GetBytesAsync(System.String,`0)">
+            <summary>
+            GETs the bytes that are returned in the <see cref="T:System.Net.Http.HttpResponseMessage"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.DownloadFileAsync(System.String,System.String,`0)">
+            <summary>
+            Downloads the file from the specified <paramref name="url"/> and saves it at the specified <paramref name="fileName"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="fileName">The file path combined with the file name</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.PutAsync(System.String,System.Object,`0)">
+            <summary>
+            PUTs the specified <paramref name="content"/> at the specified <paramref name="url"/> and returns a <see cref="T:System.Net.Http.HttpResponseMessage"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="content">The content to put</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.DeleteAsync(System.String,`0)">
+            <summary>
+            Sends a DELETE request and returns a <see cref="T:System.Net.Http.HttpResponseMessage"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.PostAsync``1(System.String,System.Object,`0)">
+            <summary>
+            POSTs a web request to an URL that contains the specified <paramref name="content"/> and returns a <see cref="T:SkroutzLastMileClient.WebRequestResult`1"/>
+            </summary>
+            <typeparam name="TResponse">The type of the response</typeparam>
+            <param name="url">The URL</param>
+            <param name="content">The content to post</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.GetAsync``1(System.String,`0)">
+            <summary>
+            GETs a web request to a URL and returns a <see cref="T:SkroutzLastMileClient.WebRequestResult`1"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.PutAsync``1(System.String,System.Object,`0)">
+            <summary>
+            PUTs the specified <paramref name="content"/> at the specified <paramref name="url"/> and returns a <see cref="T:SkroutzLastMileClient.WebRequestResult`1"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="content">The content to put</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.DeleteAsync``1(System.String,`0)">
+            <summary>
+            Sends a DELETE request and returns a <see cref="T:SkroutzLastMileClient.WebRequestResult`1"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.ShouldLogRequests">
+            <summary>
+            Gets a flag indicating whether the requests should be logged or not
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.CreateClient">
+            <summary>
+            Creates and returns an <see cref="T:System.Net.Http.HttpClient"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.ConfigureClient(System.Net.Http.HttpClient)">
+            <summary>
+            Configures the specified <paramref name="client"/>
+            </summary>
+            <param name="client">The client</param>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.ConfigureStringContent(System.Net.Http.StringContent)">
+            <summary>
+            Configures the specified <paramref name="stringContent"/>
+            </summary>
+            <param name="stringContent">The content</param>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.Serialize(System.Object)">
+            <summary>
+            Serializes the specified <paramref name="obj"/> to a string
+            before sending the request
+            </summary>
+            <param name="obj">The object</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.Deserialize``1(System.String)">
+            <summary>
+            Deserializes the specified <paramref name="rawServerResponse"/> to the requested type
+            </summary>
+            <typeparam name="TResponse">The type to deserialize to</typeparam>
+            <param name="rawServerResponse">The raw server response</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.GetMediaType">
+            <summary>
+            Gets the media type header that is attached to the request before sending it
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.GetEncoding">
+            <summary>
+            Gets the encoding that is attached to the request before sending it
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.CreateAuthenticationHeader(`0)">
+            <summary>
+            Creates and returns a <see cref="T:System.Net.Http.Headers.AuthenticationHeaderValue"/> using the
+            specified <paramref name="authenticationArgs"/>
+            </summary>
+            <param name="authenticationArgs">The authentication arguments</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.ParseErrorMessage(SkroutzLastMileClient.WebRequestResult)">
+            <summary>
+            Attempts to parse the error message contained in the <paramref name="result"/>
+            </summary>
+            <param name="result">The result</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.ParseDeserializationErrorMessage(SkroutzLastMileClient.WebRequestResult,System.Type,System.Exception)">
+            <summary>
+            Attempts to parse the error message contained in the specified <paramref name="deserializationException"/>
+            that was thrown when attempting to deserialize the <paramref name="result"/> to the specified <paramref name="deserializationType"/>
+            </summary>
+            <param name="deserializationType">The type that response should have been deserialized to</param>
+            <param name="deserializationException">The deserialization exception that was thrown</param>
+            <param name="result">The result</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.HandleNullAuthenticationArgs">
+            <summary>
+            Handles the null arguments
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.CreateStringContent(System.Object)">
+            <summary>
+            Creates and returns the <see cref="T:System.Net.Http.StringContent"/> that represents
+            the specified <paramref name="content"/>
+            </summary>
+            <param name="content">The content</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.ParseErrorMessageCore(SkroutzLastMileClient.WebRequestResult)">
+            <summary>
+            Attempts to parse the error message contained in the <paramref name="response"/>
+            </summary>
+            <param name="response">The Web request result</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.ParseErrorMessageCore(SkroutzLastMileClient.WebRequestResult,System.Type,System.Exception)">
+            <summary>
+            Attempts to parse the error message contained in the specified <paramref name="deserializationException"/>
+            that was thrown when attempting to deserialize the <paramref name="response"/> to the specified <paramref name="deserializationType"/>
+            </summary>
+            <param name="deserializationType">The type that response should have been deserialized to</param>
+            <param name="deserializationException">The deserialization exception that was thrown</param>
+            <param name="response">The Web request result</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient`1.SetAuthorizationHeader(`0)">
+            <summary>
+            Sets the specified <paramref name="authentication"/> if any to the <see cref="P:SkroutzLastMileClient.WebRequestsClient`1.Client"/>
+            </summary>
+            <param name="authentication">The token</param>
+        </member>
+        <member name="T:SkroutzLastMileClient.WebRequestsClient">
+            <summary>
+            The JWT token based implementation of the <see cref="T:SkroutzLastMileClient.WebRequestsClient`1"/>
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.WebRequestsClient.mInstance">
+            <summary>
+            The member of the <see cref="P:SkroutzLastMileClient.WebRequestsClient.Instance"/>
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.WebRequestsClient.Instance">
+            <summary>
+            A single instance of the <see cref="T:SkroutzLastMileClient.WebRequestsClient"/>
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.WebRequestsClient.CreateAuthenticationHeader(System.String)">
+            <summary>
+            Creates and returns a <see cref="T:System.Net.Http.Headers.AuthenticationHeaderValue"/> using the
+            specified <paramref name="authenticationArgs"/>
+            </summary>
+            <param name="authenticationArgs">The authentication arguments</param>
+            <returns></returns>
+        </member>
+        <member name="T:SkroutzLastMileClient.SkroutzLastMileClientConstants">
+            <summary>
+            Constants related to Skroutz last mile client
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.SkroutzLastMileClientConstants.DayOfWeekToStringMapper">
+            <summary>
+            Maps the <see cref="T:System.DayOfWeek"/> to their related <see cref="T:System.String"/>s
+            </summary>
+        </member>
+        <member name="P:SkroutzLastMileClient.SkroutzLastMileClientConstants.StatusDescriptionTypeToStringMapper">
+            <summary>
+            Maps the <see cref="T:SkroutzLastMileClient.StatusDescriptionType"/>s to their related <see cref="T:System.String"/>s
+            </summary>
+        </member>
+        <member name="T:SkroutzLastMileClient.SkroutzLastMileRoutes">
+            <summary>
+            The API routes of the Skroutz Last Mile API
+            </summary>
+        </member>
+        <member name="F:SkroutzLastMileClient.SkroutzLastMileRoutes.StageRoute">
+            <summary>
+            The stage (testing) route for the API
+            </summary>
+        </member>
+        <member name="M:SkroutzLastMileClient.SkroutzLastMileRoutes.GetAPIRoute(System.String)">
+            <summary>
+            The API route
+            </summary>
+            <param name="baseRoute">The base route</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.SkroutzLastMileRoutes.GetNewShippingOrderRoute(System.String)">
+            <summary>
+            The new shipping order route
+            </summary>
+            <param name="baseRoute">The base route</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.SkroutzLastMileRoutes.GetShipmentTrackRoute(System.String,System.String)">
+            <summary>
+            The shipping track route
+            </summary>
+            <param name="baseRoute">The base route</param>
+            <param name="trackingId">The tracking id</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.SkroutzLastMileRoutes.GetShippingOrderRoute(System.String,System.String)">
+            <summary>
+            The shipping order route
+            </summary>
+            <param name="baseRoute">The base route</param>
+            <param name="orderId">The order id</param>
+            <returns></returns>
+        </member>
+        <member name="M:SkroutzLastMileClient.SkroutzLastMileRoutes.GetAllSkroutzPointsRoute(System.String)">
+            <summary>
+            The all Skroutz points route
+            </summary>
+            <param name="baseRoute">The base route</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
