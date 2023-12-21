@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace SkroutzLastMileClient.ResponseModels
+namespace SkroutzLastMileClient
 {
     /// <summary>
     /// Cancel an order any time before it is received by the customer.
