@@ -1,6 +1,4 @@
-﻿// Ignore Spelling: Skroutz
-
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace SkroutzLastMileClient.ResponseModels
 {

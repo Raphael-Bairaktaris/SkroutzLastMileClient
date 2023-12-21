@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SkroutzLastMileClient
+﻿namespace SkroutzLastMileClient
 {
     /// <summary>
     /// Provides enumeration over the paper sizes

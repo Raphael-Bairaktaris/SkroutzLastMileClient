@@ -10,47 +10,47 @@ namespace SkroutzLastMileClient
         #region Private Members
 
         /// <summary>
-        /// The member of the <see cref="Id"/>
+        /// The member of the <see cref="Id"/> property
         /// </summary>
         private string? mId;
 
         /// <summary>
-        /// The member of the <see cref="Type"/>
+        /// The member of the <see cref="Type"/> property
         /// </summary>
         private string? mType;
 
         /// <summary>
-        /// The member of the <see cref="Name"/>
+        /// The member of the <see cref="Name"/> property
         /// </summary>
         private string? mName;
 
         /// <summary>
-        /// The member of the <see cref="StreetName"/>
+        /// The member of the <see cref="StreetName"/> property
         /// </summary>
         private string? mStreetName;
 
         /// <summary>
-        /// The member of the <see cref="City"/>
+        /// The member of the <see cref="City"/> property
         /// </summary>
         private string? mCity;
 
         /// <summary>
-        /// The member of the <see cref="Region"/>
+        /// The member of the <see cref="Region"/> property
         /// </summary>
         private string? mRegion;
 
         /// <summary>
-        /// The member of the <see cref="WorkingHours"/>
+        /// The member of the <see cref="WorkingHours"/> property
         /// </summary>
         private IEnumerable<AvailabilityShiftResponseModel>? mWorkingHours;
 
         /// <summary>
-        /// The member of the <see cref="Model"/>
+        /// The member of the <see cref="Model"/> property
         /// </summary>
         private string? mModel;
 
         /// <summary>
-        /// The member of the <see cref="SwipboxVersion"/>
+        /// The member of the <see cref="SwipboxVersion"/> property
         /// </summary>
         private string? mSwipboxVersion;
         #endregion

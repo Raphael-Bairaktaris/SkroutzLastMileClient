@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.WebUtilities;
 using SkroutzLastMileClient.ResponseModels;
-using System.Web;
 
 namespace SkroutzLastMileClient
 {

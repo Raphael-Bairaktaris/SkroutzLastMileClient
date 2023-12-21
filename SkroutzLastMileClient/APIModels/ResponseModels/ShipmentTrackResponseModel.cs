@@ -1,6 +1,4 @@
-﻿// Ignore Spelling: Skroutz
-
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace SkroutzLastMileClient
 {
@@ -12,12 +10,12 @@ namespace SkroutzLastMileClient
         #region Private Members
 
         /// <summary>
-        /// The member of the <see cref="CourierNotes"/>
+        /// The member of the <see cref="CourierNotes"/> property
         /// </summary>
         private string? mCourierNotes;
 
         /// <summary>
-        /// The member of the <see cref="ShippingOrderId"/>
+        /// The member of the <see cref="ShippingOrderId"/> property
         /// </summary>
         private string? mShippingOrderId;
 

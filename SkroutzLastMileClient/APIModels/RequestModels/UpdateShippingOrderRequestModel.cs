@@ -1,6 +1,4 @@
-﻿// Ignore Spelling: Skroutz
-
-namespace SkroutzLastMileClient
+﻿namespace SkroutzLastMileClient
 {
     /// <summary>
     /// Used to reschedule the pickup date and time window for an order. 

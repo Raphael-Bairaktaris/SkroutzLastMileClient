@@ -1,6 +1,4 @@
-﻿// Ignore Spelling: Skroutz
-
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 
 namespace SkroutzLastMileClient
 {
@@ -12,12 +10,12 @@ namespace SkroutzLastMileClient
         #region Private Members
 
         /// <summary>
-        /// The member of the <see cref="OrderId"/>
+        /// The member of the <see cref="OrderId"/> property
         /// </summary>
         private string? mOrderId;
 
         /// <summary>
-        /// The member of the <see cref="TrackingId"/>
+        /// The member of the <see cref="TrackingId"/> property
         /// </summary>
         private string? mTrackingId;
 

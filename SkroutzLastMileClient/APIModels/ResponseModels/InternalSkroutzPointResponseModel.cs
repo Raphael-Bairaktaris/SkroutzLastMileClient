@@ -1,5 +1,4 @@
-﻿// Ignore Spelling: Skroutz
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace SkroutzLastMileClient
 {
@@ -11,7 +10,7 @@ namespace SkroutzLastMileClient
         #region Private Members
 
         /// <summary>
-        /// The member of the <see cref="SkroutzPoints"/>
+        /// The member of the <see cref="SkroutzPoints"/> property
         /// </summary>
         private IEnumerable<SkroutzPointResponseModel>? mSkroutzPoints;
 
