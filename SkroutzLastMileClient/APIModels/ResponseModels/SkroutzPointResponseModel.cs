@@ -117,7 +117,7 @@ namespace SkroutzLastMileClient
         /// The zip code
         /// </summary>
         [JsonProperty("zip")]
-        public int ZipCode { get; set; }
+        public string ZipCode { get; set; }
 
         /// <summary>
         /// The region
