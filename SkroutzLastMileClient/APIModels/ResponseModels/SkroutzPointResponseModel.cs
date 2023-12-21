@@ -35,6 +35,11 @@ namespace SkroutzLastMileClient
         private string? mCity;
 
         /// <summary>
+        /// The member of the <see cref="ZipCode"/> property
+        /// </summary>
+        private string? mZipCode;
+
+        /// <summary>
         /// The member of the <see cref="Region"/> property
         /// </summary>
         private string? mRegion;
@@ -117,7 +122,11 @@ namespace SkroutzLastMileClient
         /// The zip code
         /// </summary>
         [JsonProperty("zip")]
-        public string ZipCode { get; set; }
+        public string ZipCode 
+        { 
+            get => mZipCode ?? string.Empty;
+            set => mZipCode = value;
+        }
 
         /// <summary>
         /// The region
