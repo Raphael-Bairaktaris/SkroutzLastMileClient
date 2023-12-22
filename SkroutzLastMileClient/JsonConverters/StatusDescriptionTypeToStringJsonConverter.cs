@@ -5,14 +5,14 @@ namespace SkroutzLastMileClient
     /// <summary>
     /// The <see cref="JsonConverter{T}"/> that converts a <see cref="StatusDescriptionType"/> to <see cref="string"/>s
     /// </summary>
-    public class StatusDescriptionToStringJsonConverter : BaseEnumJsonConverter<StatusDescriptionType>
+    public class StatusDescriptionTypeToStringJsonConverter : BaseEnumJsonConverter<StatusDescriptionType>
     {
         #region Constructors
 
         /// <summary>
         /// Default constructor
         /// </summary>
-        public StatusDescriptionToStringJsonConverter()
+        public StatusDescriptionTypeToStringJsonConverter()
         {
 
         }

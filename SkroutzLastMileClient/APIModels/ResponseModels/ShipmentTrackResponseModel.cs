@@ -32,7 +32,7 @@ namespace SkroutzLastMileClient
         /// <summary>
         /// The status description
         /// </summary>
-        [JsonConverter(typeof(StatusDescriptionToStringJsonConverter))]
+        [JsonConverter(typeof(StatusDescriptionTypeToStringJsonConverter))]
         [JsonProperty("status_description")]
         public StatusDescriptionType StatusDescription { get; set; }
 
